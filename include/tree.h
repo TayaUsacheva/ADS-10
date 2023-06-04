@@ -14,14 +14,13 @@ class Tree {
     Node* root;
     std::vector<std::vector<char>> permutations;
     void insert(Node* root, const std::vector<char>& vec) {
-        char c;
         for (int i = 0; i < vec.size(); i++) {
             Node* child = new Node;
-            child->value = c;
+            child->value = vec[i];
             root->children.push_back(child);
             std::vector<char> remainingChars(vec);
             remainingChars.erase(std::find(remainingChars.begin(), \
-                                          remainingChars.end(), c));
+                                          remainingChars.end(), vec[i]));
             insert(child, remainingChars);
         }
     }
