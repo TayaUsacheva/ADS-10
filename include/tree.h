@@ -14,6 +14,7 @@ class Tree {
     Node* root;
     std::vector<std::vector<char>> permutations;
     void insert(Node* root, const std::vector<char>& vec) {
+        char c;
         for (int i = 0; i < vec.size(); i++) {
             Node* child = new Node;
             child->value = c;
