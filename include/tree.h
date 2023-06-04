@@ -20,7 +20,7 @@ class Tree {
             child->value = c;
             root->children.push_back(child);
             std::vector<char> remainingChars(vec);
-            remainingChars.erase(std::find(remainingChars.begin() + i), c);
+            remainingChars.erase(std::find(remainingChars.begin(), remainingChars.begin() + i, c));
             insert(child, remainingChars);
         }
     }
